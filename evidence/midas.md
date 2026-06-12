@@ -242,6 +242,10 @@
 - Score: `30–40% fewer context tokens` (deterministic A/B vs the parsimony-off baseline: synthetic 102→87, conflicts 207→121, multiday 174→126 avg tokens, recall@k unchanged); plus −42%/line lean record format and a 442→198-token (−55%) injected MCP policy.
 - Source: `BENCHMARKS.md` §1 "Context parsimony — a scale-free relevance floor" (table + reproduce command); `CHANGELOG.md` "Token-lean by default".
 
+### BEAM (extra, not yet a table column) ✅
+- Score: `recall@k 0.56 / 0.51 / 0.40 / 0.32` across ALL four tiers (100K / 500K / 1M / **10M tokens**; n=400/700/700/200, deterministic, evidence-annotated) vs a recency baseline at **0.00 at every tier**; $0 LLM-free ingest (208,696 turns at the 10M tier on local CPU).
+- Source: `BENCHMARKS.md` §"BEAM — the 10M-token frontier benchmark" — with reproduce commands; landscape in `docs/frontier-2026.md`.
+
 ### Methodology open ✅
 > Publicly documented, reproducible methodology.
 - Source: `BENCHMARKS.md` (every number has a reproduce command + "Methodology — why reader-independent metrics"); `eval/` harness in-repo (datasets, adapters, metrics, runner, retention).
